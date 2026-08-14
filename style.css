@@ -1,0 +1,432 @@
+/* =========================================================
+   Nur Adhilla — Portfolio Stylesheet
+   Cleaned up and rebuilt: fixed spacing bugs, unified type
+   scale, improved responsiveness, added smooth hover states.
+   ========================================================= */
+
+:root {
+  --ink: #1c1c1c;
+  --paper: #ffffff;
+  --muted: #6b6b6b;
+  --card-bg: #f0efec;
+  --accent: #252122;
+  --accent-hover: #5e5c5b;
+  --line: #d8d6d2;
+  --serif: "Bebas Neue", cursive;
+  --sans: "Poppins", sans-serif;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  padding-left: 40px;
+  padding-right: 40px;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+
+header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo,
+.logo1 {
+  width: 110px;
+}
+
+.logo img,
+.logo1 img {
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover img,
+.logo1:hover img {
+  opacity: 0.75;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.hamburger a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.menu {
+  list-style-type: none;
+  display: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.menu.show-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menu li a {
+  display: inline-block;
+  padding: 8px 12px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu li a:hover {
+  background-color: var(--card-bg);
+  color: var(--ink);
+}
+
+.email {
+  color: var(--ink);
+  padding: 8px 10px;
+}
+
+.email a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.email a:hover {
+  color: var(--muted);
+}
+
+@media screen and (min-width: 688px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .logo,
+  .logo1 {
+    width: 90px;
+  }
+}
+
+/* =========================
+   BANNER (homepage hero)
+   ========================= */
+
+.banner {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 24px auto 0;
+  background-color: var(--ink);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.heading h1 {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.heading p {
+  color: #fff;
+}
+
+.content2 {
+  margin: 0 auto;
+}
+
+.content2 p {
+  color: #e9e9e9;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 6px auto;
+}
+
+@media screen and (min-width: 688px) {
+  .banner img {
+    height: 450px;
+  }
+  .heading h1 {
+    font-size: 34px;
+  }
+}
+
+/* =========================
+   SECTION HEADINGS
+   ========================= */
+
+.artworks {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--ink);
+  padding-top: 50px;
+  padding-bottom: 16px;
+  font-family: var(--sans);
+  border-bottom: 1px solid var(--line);
+}
+
+.artworks h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+
+/* =========================
+   GRID / CARDS
+   ========================= */
+
+.main,
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+  margin: 10px 0;
+}
+
+.card {
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  border-radius: 6px;
+}
+
+.img2 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 688px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  .col {
+    margin: 10px;
+  }
+}
+
+/* =========================
+   TEXT CONTENT (subpages)
+   ========================= */
+
+.content1 {
+  max-width: var(--max-width);
+  margin: 20px auto 0;
+  background-color: var(--ink);
+  border-radius: 12px;
+  padding: 10px 30px 40px;
+}
+
+.content1 h2 {
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.content1 p {
+  color: #dedede;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  padding-bottom: 10px;
+}
+
+.content1 .row {
+  padding: 30px 0;
+}
+
+@media screen and (min-width: 688px) {
+  .content1 {
+    padding: 10px 50px 50px;
+  }
+  .content1 h2 {
+    font-size: 46px;
+  }
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: var(--sans);
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.button {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+a[target="_blank"] {
+  color: var(--ink);
+  text-decoration: none;
+  background-color: burlywood;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  text-align: center;
+  background-color: var(--card-bg);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 70px -40px 0;
+}
+
+.copyright {
+  font-family: var(--sans);
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* =========================
+   FINAL / CTA SECTION
+   ========================= */
+
+.final {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.final .artworks {
+  border-bottom: none;
+}
+
+/* =========================
+   IFRAME (video embeds)
+   ========================= */
+
+iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
